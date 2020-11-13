@@ -4,8 +4,10 @@ import { LinksCollection } from '../api/links';
 
 export const Info = () => {
   const links = useTracker(() => {
+    Meteor.subscribe('links');
     return LinksCollection.find().fetch();
   });
+  // console.log(links)
 
   return (
     <div>

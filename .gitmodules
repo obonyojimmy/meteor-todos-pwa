@@ -1,0 +1,3 @@
+[submodule "packages/minidb"]
+	path = packages/minidb
+	url = https://github.com/obonyojimmy/minidb.git

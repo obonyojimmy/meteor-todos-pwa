@@ -1,12 +1,17 @@
 import { Meteor } from 'meteor/meteor';
-import { LinksCollection } from '/imports/api/links';
+import { LinksCollection } from '/imports/api/server/links';
 
 function insertLink({ title, url }) {
   LinksCollection.insert({title, url, createdAt: new Date()});
 }
 
+Meteor.publish('links', function () {
+  return LinksCollection.find();
+});
+
 Meteor.startup(() => {
   // If the Links collection is empty, add some data.
+  // console.log(LinksCollection.find().count())
   if (LinksCollection.find().count() === 0) {
     insertLink({
       title: 'Do the Tutorial',
