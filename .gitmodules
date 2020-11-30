@@ -1,1 +1,7 @@
 
+[submodule "packages/meteor-indexdb"]
+	path = packages/meteor-indexdb
+	url = https://github.com/obonyojimmy/meteor-indexdb.git
+[submodule "packages/minimongo2"]
+	path = packages/minimongo2
+	url = https://github.com/obonyojimmy/minimongo2.git
